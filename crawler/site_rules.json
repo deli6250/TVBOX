@@ -1,0 +1,57 @@
+{
+  "_说明": "指定影视网站爬取规则。kind=maccms 只需填接口根地址（脚本整页抓最新条目，再按条目自带分类归到 电影/电视剧/综艺/动漫）；kind=html 需要给分类页地址模板和正则。enabled=false 只是先不看，不删。",
+  "rules": [
+    {
+      "name": "红牛资源",
+      "kind": "maccms",
+      "enabled": true,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "pages": 8,
+      "limit_per_category": 25,
+      "备注": "苹果CMS v10 采集接口，分类：电影/连续剧/综艺/动漫"
+    },
+    {
+      "name": "光速资源",
+      "kind": "maccms",
+      "enabled": true,
+      "api": "https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/",
+      "pages": 8,
+      "limit_per_category": 25,
+      "备注": "同上，备用线路"
+    },
+    {
+      "name": "非凡资源",
+      "kind": "maccms",
+      "enabled": false,
+      "api": "http://cj.ffzyapi.com/api.php/provide/vod/",
+      "pages": 8,
+      "limit_per_category": 25,
+      "备注": "分类接口通，但 detail 经常主动断连，要用就打开并重试几次"
+    },
+    {
+      "name": "暴风资源",
+      "kind": "maccms",
+      "enabled": false,
+      "api": "http://bfzyapi.com/api.php/provide/vod/",
+      "pages": 8,
+      "limit_per_category": 25,
+      "备注": "https 握手有时超时，改用 http 更稳"
+    },
+    {
+      "name": "HTML 列表页示例（换成自己站的地址和正则即可）",
+      "kind": "html",
+      "enabled": false,
+      "pages": 2,
+      "list_urls": {
+        "电影": "https://你自己的站/vodshow/1/page/{page}.html",
+        "电视剧": "https://你自己的站/vodshow/2/page/{page}.html",
+        "综艺": "https://你自己的站/vodshow/3/page/{page}.html",
+        "动漫": "https://你自己的站/vodshow/4/page/{page}.html"
+      },
+      "item_regex": "<a[^>]+href=\"(\\/voddetail\\/[0-9]+?\\.html)\"[^>]*>(.*?)</a>",
+      "year_regex": "([12]\\d{3})",
+      "remark_regex": "<span[^>]*class=\"[^\"]*pic-text[^\"]*\"[^>]*>(.*?)</span>",
+      "备注": "item_regex 的第 1 个括号必须是详情页链接，第 2 个括号是标题；抓不到就先用浏览器打开列表页看 HTML 结构再改正则"
+    }
+  ]
+}
