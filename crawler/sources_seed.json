@@ -1,0 +1,38 @@
+{
+  "_说明": "种子源配置。type: auto=自动识别 / tvbox=TVBox接口JSON / live=直播源(m3u或txt) / html=聚合导航页(从中挖出新地址)。enabled=false 可临时关掉。抓取时可在命令行加 --only tvbox 只跑某一类。",
+  "limits": {
+    "max_depth": 1,
+    "max_urls_total": 320,
+    "max_sites_probe": 600,
+    "max_stream_probe": 2000,
+    "config_workers": 6,
+    "site_workers": 40,
+    "stream_workers": 64,
+    "config_timeout": 20,
+    "site_timeout": 10,
+    "stream_timeout": 7
+  },
+  "seeds": [
+    {"type": "html",  "enabled": true, "tag": "聚合导航", "url": "https://tvbox.shenzjd.com/"},
+    {"type": "html",  "enabled": true, "tag": "聚合导航", "url": "https://cyuan.netlify.app/"},
+    {"type": "html",  "enabled": true, "tag": "聚合导航", "url": "https://et6jt3.github.io/iptv/"},
+
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "http://150.158.52.248/tgyg/bbm.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://gitlab.com/noimank/tvbox/-/raw/main/tvbox1.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://clun.top/box.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://raw.liucn.cc/box/m.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://jijietvbox.lol/tv/xiaoma.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://jihulab.com/ygbh1/box/-/raw/main/ys.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://raw.githubusercontent.com/yw88075/tvbox/main/yw.json"},
+    {"type": "tvbox", "enabled": true, "tag": "TVBox接口", "url": "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"},
+
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "https://raw.githubusercontent.com/Supprise0901/TVBox_live/refs/heads/main/live.txt"},
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt"},
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "http://fmys.top/lib/live.m3u"},
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "https://clun.top/lib/iptv.m3u"},
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "http://iptv.ruyitv.cc/m3u/tv.txt"},
+    {"type": "live",  "enabled": true, "tag": "直播源", "url": "http://tv123.vvvv.ee/tv.m3u"},
+    {"type": "live",  "enabled": false, "tag": "直播源-国际", "url": "https://iptv-org.github.io/iptv/index.m3u"}
+  ]
+}
