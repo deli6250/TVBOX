@@ -3,8 +3,8 @@
 TVBox 接口配置与可用直播源（精简版：每个频道只保留探活通过、延迟最低的一条线路；已剔除带时效签名、几小时内失效的线路）。
 
 ## 文件
-- `config.json`：TVBox 点播接口配置（83 个站点），导入 TVBox 即可使用
-- `live.txt`：直播源（TXT 格式，TVBox 直播导入用）
+- `config.json`：TVBox 点播接口配置（46 个站点），导入 TVBox 即可使用
+- `live.txt`：直播源（730 个频道，TXT 格式，TVBox 直播导入用）
 - `crawler/`：本地抓取 / 探活 / 生成清单的脚本与规则，重跑刷新源用，详见 `crawler/README.md`
 
 ## 说明
